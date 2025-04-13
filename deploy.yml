@@ -1,10 +1,16 @@
 - name: practical 6 question 3
   hosts: localhost
   gather_facts: no
+  vars:
+    app_dir: /home/do_practical6/do_p6_nodejs3
   tasks:
     - name: Start NodeJS application
-      command: node /home/do_practical6/do_p6_nodejs2/app.js
+      command: node {{ app_dir }}/app.js
       args:
-        chdir: /home/do_practical6/do_p6_q4
-      async: 0
-      poll: 0
+        chdir: "{{ app_dir }}"
+      register: result
+      changed_when: result.rc == 0
+
+    - name: Display startup message
+      debug:
+        msg: "{{ result.stdout_lines }}"
