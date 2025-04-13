@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: no
   vars:
-    app_dir: /home/do_practical6/do_p6_quest3
+    app_dir: /home/do_practical6/do_p6_quest3v1
   tasks:
     - name: Step 1 - Starting the Node.js application
       debug:
