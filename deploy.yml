@@ -1,6 +1,10 @@
-- name: practical 6 question 3 
+- name: practical 6 question 3
   hosts: localhost
+  gather_facts: no
   tasks:
-      - name: run nodejs
-        debug:
-           command: node /home/do_practical6/do_p6_nodejs1 app.js
+    - name: Start NodeJS application
+      command: node /home/do_practical6/do_p6_nodejs2/app.js
+      args:
+        chdir: /home/do_practical6/do_p6_q4
+      async: 0
+      poll: 0
