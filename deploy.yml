@@ -1,0 +1,12 @@
+- name: Run NodeJS Web Application
+  hosts: localhost
+  gather_facts: no
+  vars:
+    app_dir: /home/do_practical6/do_p6_q3nodejs
+  tasks:
+    - name: Start NodeJS application
+      command: node {{ app_dir }}/app.js
+      args:
+        chdir: "{{ app_dir }}"
+      async: 0
+      poll: 0
