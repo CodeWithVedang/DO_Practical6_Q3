@@ -1,18 +1,6 @@
-- name: Run NodeJS Web Application
+- name: practical 6 question 3 
   hosts: localhost
-  gather_facts: no
-  vars:
-    app_dir: /home/do_practical6/do_p6_nodejs
   tasks:
-    - name: Copy app.js (if not present)
-      copy:
-        src: app.js
-        dest: "{{ app_dir }}/app.js"
-        mode: '0755'
-
-    - name: Start NodeJS application
-      command: node {{ app_dir }}/app.js
-      args:
-        chdir: "{{ app_dir }}"
-      async: 0
-      poll: 0
+      - name: run nodejs
+        debug:
+           command: node /home/do_practical6/do_p6_nodejs1 app.js
