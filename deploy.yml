@@ -2,7 +2,7 @@
   hosts: localhost
   gather_facts: no
   vars:
-    app_dir: /home/do_practical6/do_p6_q4/nodejs-app
+    app_dir: /home/do_practical6/do_p6_nodejs/nodejs-app
   tasks:
     - name: Start NodeJS application
       command: node {{ app_dir }}/app.js
