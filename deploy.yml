@@ -5,6 +5,7 @@
     app_dir: /home/do_practical6/do_p6_nodejs3
   tasks:
     - name: Start NodeJS application
+      debug:
       command: node {{ app_dir }}/app.js
       args:
         chdir: "{{ app_dir }}"
